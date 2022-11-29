@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+@layer components{
+    .app{
+        @apply bg-blue-600
+    }
+} */

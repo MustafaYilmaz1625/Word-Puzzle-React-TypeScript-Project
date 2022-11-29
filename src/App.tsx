@@ -8,9 +8,12 @@ function App() {
   const [enterLetters,setEnterLetters] = useState<string[]>([])
 
   return (
-   <div className="bg-red-500 min-h-screen">
-    Lose Winmb
-   </div>
+  <div className="app">
+     <div className="bg-red-500 min-h-screen">
+      Lose Winmb
+     </div>
+     
+  </div>
   )
 }
 
