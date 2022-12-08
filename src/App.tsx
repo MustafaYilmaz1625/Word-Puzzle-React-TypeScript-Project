@@ -8,6 +8,23 @@ const getWord = () => {
   return words[Math.floor(Math.random() * words.length)];
 };
 
+useEffect(() => {
+  const handler=(e:KeyboardEvent) => {
+    const key=e.key
+    if(!key.match(/^[a-z]$/))  return;
+    .preventDefault()
+    addGuessedLetter(key)
+  }
+  
+  document.addEventListener("keypress", handler)
+
+  return () => {
+      document.removeEventListener("keypress", handler)
+
+  }
+}, [])
+
+
 function App() {
   const [wordToGuess, setWordToGuess] = useState(getWord);
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
@@ -29,7 +46,7 @@ function App() {
     >
       <div style={{ fontSize: "2rem", textAlign: "center" }}>Lose Win</div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-      <HangmanWord />
+      <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
       <div style={{ alignSelf: "stretch" }}>
         <Keyboard />
       </div>
