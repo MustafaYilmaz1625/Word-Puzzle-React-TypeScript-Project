@@ -1,4 +1,3 @@
-import React from "react";
 const HEAD = (
   <div
     style={{
@@ -92,7 +91,7 @@ type HangmanDrawingProps = {
   numberOfGuesses: number;
 };
 
-const HangmanDrawing = ({ numberOfGuesses }: HangmanDrawingProps) => {
+export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return (
     <div style={{ position: "relative" }}>
       {BODY_PARTS.slice(0, numberOfGuesses)}
@@ -125,6 +124,4 @@ const HangmanDrawing = ({ numberOfGuesses }: HangmanDrawingProps) => {
       <div style={{ height: "10px", width: "250px", background: "black" }} />
     </div>
   );
-};
-
-export default HangmanDrawing;
+}
